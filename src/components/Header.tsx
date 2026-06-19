@@ -2,8 +2,9 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useAuth } from '@/lib/auth-context'
-import { Menu, X, Plane, User, LogOut, ShoppingCart } from 'lucide-react'
+import { Menu, X, User, LogOut, ShoppingCart } from 'lucide-react'
 import AuthModal from './AuthModal'
 
 export default function Header() {
@@ -34,8 +35,8 @@ export default function Header() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <Link href="/" className="flex items-center space-x-2">
-                <Plane className="h-8 w-8 text-primary-600" />
-                <span className="text-xl font-bold text-gray-900">Claude Travel Hub</span>
+                <Image src="/logo.png" alt="Kanakoo Travels" width={36} height={22} className="object-contain" priority />
+                <span className="text-xl font-bold text-gray-900">Kanakoo Travels</span>
               </Link>
             </div>
 

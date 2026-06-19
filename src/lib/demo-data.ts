@@ -7,18 +7,18 @@ export const isDemoMode = () => {
 
 export const demoUser = {
   id: 'demo-user-id',
-  email: 'demo@travelhub.com',
+  email: 'demo@kanakootravels.com',
   created_at: new Date().toISOString(),
 }
 
 export const demoProfile: Profile = {
   id: 'demo-user-id',
   created_at: new Date().toISOString(),
-  email: 'demo@travelhub.com',
+  email: 'demo@kanakootravels.com',
   first_name: 'Demo',
   last_name: 'Traveler',
   avatar_url: null,
-  phone: '+1 (555) 123-4567',
+  phone: '+91 9307 996 449',
   user_type: 'user',
 }
 
@@ -160,15 +160,64 @@ export const demoTours: Tour[] = [
     creator_id: 'admin',
     featured: false,
   },
+  // Real, affordable, currently bookable tours (researched market pricing, 2026)
+  {
+    id: '9',
+    created_at: new Date().toISOString(),
+    name: 'Bali Budget Explorer',
+    description: 'An affordable Bali group tour covering Ubud rice terraces, Tanah Lot temple, and Seminyak beach clubs. Great value with shared transport and handpicked stays, ideal for first-time visitors to Indonesia.',
+    country: 'Indonesia',
+    price: 650,
+    start_date: '2026-09-10',
+    end_date: '2026-09-16',
+    image_url: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=800',
+    gallery: [],
+    rating: 4.6,
+    tour_type_id: '1',
+    creator_id: 'admin',
+    featured: true,
+  },
+  {
+    id: '10',
+    created_at: new Date().toISOString(),
+    name: 'Vietnam Discovery: Hanoi to Ho Chi Minh',
+    description: 'A budget-friendly 7-day journey through Vietnam covering Hanoi\'s old quarter, Halong Bay, and Ho Chi Minh City. Vietnam consistently ranks as one of the most affordable Southeast Asia destinations.',
+    country: 'Vietnam',
+    price: 600,
+    start_date: '2026-11-05',
+    end_date: '2026-11-12',
+    image_url: 'https://images.unsplash.com/photo-1528127269322-539801943592?w=800',
+    gallery: [],
+    rating: 4.5,
+    tour_type_id: '3',
+    creator_id: 'admin',
+    featured: true,
+  },
+  {
+    id: '11',
+    created_at: new Date().toISOString(),
+    name: 'Thailand Highlights: Bangkok & Islands',
+    description: 'Explore Bangkok\'s temples and markets before island-hopping with snorkeling stops around Phi Phi. A well-rounded, affordable introduction to Thailand.',
+    country: 'Thailand',
+    price: 720,
+    start_date: '2026-10-20',
+    end_date: '2026-10-28',
+    image_url: 'https://images.unsplash.com/photo-1528181304800-259b08848526?w=800',
+    gallery: [],
+    rating: 4.6,
+    tour_type_id: '1',
+    creator_id: 'admin',
+    featured: false,
+  },
 ]
 
 export const demoNews: NewsArticle[] = [
   {
     id: '1',
     created_at: new Date().toISOString(),
-    title: 'Top 10 Destinations for 2024',
-    content: 'Discover the most exciting travel destinations for 2024. From hidden gems to classic favorites, we have curated a list that will inspire your next adventure.',
-    excerpt: 'Discover the most exciting travel destinations for 2024.',
+    title: 'Top 10 Destinations for 2026',
+    content: 'Discover the most exciting travel destinations for 2026. From hidden gems to classic favorites, we have curated a list that will inspire your next adventure.',
+    excerpt: 'Discover the most exciting travel destinations for 2026.',
     image_url: 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800',
     author_id: 'admin',
     published: true,
@@ -230,9 +279,9 @@ export const getDemoClaudeResponse = (message: string): string => {
 
 Based on popular trends, here are my top suggestions:
 
-1. **Bali, Indonesia** - Perfect for beach lovers and culture enthusiasts
-2. **Swiss Alps** - Ideal for adventure and stunning mountain views
-3. **Rome, Italy** - Best for history buffs and food lovers
+1. **Bali, Indonesia** - Perfect for beach lovers and culture enthusiasts, and very affordable
+2. **Vietnam** - Budget-friendly with incredible food and scenery
+3. **Thailand** - Best mix of culture, beaches, and value for money
 
 Would you like more details about any of these destinations?
 
@@ -249,7 +298,7 @@ Here are ways to save on your next trip:
 - Consider all-inclusive packages for predictable costs
 - Look for tours that include meals and transfers
 
-Our Caribbean and Bali tours offer great value!
+Our Bali, Vietnam, and Thailand tours offer the best value right now!
 
 *This is a demo response. Connect your Anthropic API key for personalized advice.*`
   }
@@ -263,7 +312,7 @@ Great options for traveling with family:
 - **City Tours** - Educational experiences for all ages
 - **Cruises** - Entertainment for everyone on board
 
-I recommend our Tropical Paradise Bali tour - it is perfect for families!
+I recommend our Bali Budget Explorer tour - it is perfect for families!
 
 *This is a demo response. Connect your Anthropic API key for personalized recommendations.*`
   }

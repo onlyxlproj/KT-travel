@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { Plane, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Youtube } from 'lucide-react'
+import Image from 'next/image'
+import { Mail, Phone, Clock } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -9,26 +10,12 @@ export default function Footer() {
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              <Plane className="h-8 w-8 text-primary-400" />
-              <span className="text-xl font-bold">Claude Travel Hub</span>
+              <Image src="/logo.png" alt="Kanakoo Travels" width={36} height={22} className="object-contain" />
+              <span className="text-xl font-bold">Kanakoo Travels</span>
             </Link>
             <p className="text-gray-400 text-sm mb-4">
-              Discover amazing tours worldwide with AI-powered travel recommendations. Your adventure starts here.
+              An AI-powered travel hub. We help travelers find the best affordable tours and experiences, then connect them with trusted vendors to book.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Youtube className="h-5 w-5" />
-              </a>
-            </div>
           </div>
 
           {/* Quick Links */}
@@ -90,16 +77,16 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
             <ul className="space-y-3">
               <li className="flex items-center space-x-3 text-gray-400">
-                <MapPin className="h-5 w-5 flex-shrink-0" />
-                <span>123 Travel Street, Adventure City</span>
-              </li>
-              <li className="flex items-center space-x-3 text-gray-400">
                 <Phone className="h-5 w-5 flex-shrink-0" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9307 996 449</span>
               </li>
               <li className="flex items-center space-x-3 text-gray-400">
                 <Mail className="h-5 w-5 flex-shrink-0" />
-                <span>info@claudetravelhub.com</span>
+                <span>kanakootravels@gmail.com</span>
+              </li>
+              <li className="flex items-center space-x-3 text-gray-400">
+                <Clock className="h-5 w-5 flex-shrink-0" />
+                <span>9 AM - 9 PM, Daily</span>
               </li>
             </ul>
           </div>
@@ -107,7 +94,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Claude Travel Hub. All rights reserved.
+            &copy; {new Date().getFullYear()} Kanakoo Travels. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/privacy" className="text-gray-400 hover:text-white text-sm transition-colors">

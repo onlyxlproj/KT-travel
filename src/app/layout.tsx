@@ -6,9 +6,14 @@ import { AuthProvider } from '@/lib/auth-context'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Claude Travel Hub',
-  description: 'Discover and book amazing tours worldwide with AI-powered travel recommendations',
-  keywords: ['travel', 'tours', 'booking', 'vacation', 'AI', 'Claude'],
+  title: 'Kanakoo Travels',
+  description: 'Kanakoo Travels — an AI-powered travel hub. Discover and book affordable tours worldwide with Claude AI travel recommendations.',
+  keywords: ['travel', 'tours', 'booking', 'vacation', 'AI', 'Claude', 'Kanakoo Travels'],
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 }
 
 export default function RootLayout({

@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 import DemoBanner from '@/components/DemoBanner'
 import { useAuth } from '@/lib/auth-context'
 import { supabase } from '@/lib/supabase'
-import { MapPin, Phone, Mail, Clock, Send, Loader2, CheckCircle } from 'lucide-react'
+import { Phone, Mail, Clock, Send, Loader2, CheckCircle } from 'lucide-react'
 
 export default function ContactPage() {
   const { isDemo } = useAuth()
@@ -68,29 +68,12 @@ export default function ContactPage() {
               <div className="card p-6">
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
-                    <MapPin className="h-6 w-6 text-primary-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900">Address</h3>
-                    <p className="text-gray-600 mt-1">
-                      123 Travel Street<br />
-                      Adventure City, AC 12345<br />
-                      United States
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="card p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
                     <Phone className="h-6 w-6 text-primary-600" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900">Phone</h3>
                     <p className="text-gray-600 mt-1">
-                      +1 (555) 123-4567<br />
-                      +1 (555) 987-6543
+                      +91 9307 996 449
                     </p>
                   </div>
                 </div>
@@ -104,8 +87,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Email</h3>
                     <p className="text-gray-600 mt-1">
-                      info@claudetravelhub.com<br />
-                      support@claudetravelhub.com
+                      kanakootravels@gmail.com
                     </p>
                   </div>
                 </div>
@@ -119,9 +101,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-gray-900">Business Hours</h3>
                     <p className="text-gray-600 mt-1">
-                      Mon - Fri: 9am - 6pm<br />
-                      Sat: 10am - 4pm<br />
-                      Sun: Closed
+                      9 AM - 9 PM, Daily
                     </p>
                   </div>
                 </div>
