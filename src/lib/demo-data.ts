@@ -47,6 +47,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '1',
     creator_id: 'admin',
     featured: true,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '2',
@@ -63,6 +65,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '2',
     creator_id: 'admin',
     featured: true,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '3',
@@ -79,6 +83,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '3',
     creator_id: 'admin',
     featured: true,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '4',
@@ -95,6 +101,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '4',
     creator_id: 'admin',
     featured: false,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '5',
@@ -111,6 +119,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '5',
     creator_id: 'admin',
     featured: false,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '6',
@@ -127,6 +137,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '6',
     creator_id: 'admin',
     featured: true,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '7',
@@ -143,6 +155,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '1',
     creator_id: 'admin',
     featured: true,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '8',
@@ -159,6 +173,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '2',
     creator_id: 'admin',
     featured: false,
+    provider_name: null,
+    provider_link: null,
   },
   // Real, affordable, currently bookable tours (researched market pricing, 2026)
   {
@@ -176,6 +192,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '1',
     creator_id: 'admin',
     featured: true,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '10',
@@ -192,6 +210,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '3',
     creator_id: 'admin',
     featured: true,
+    provider_name: null,
+    provider_link: null,
   },
   {
     id: '11',
@@ -208,6 +228,8 @@ export const demoTours: Tour[] = [
     tour_type_id: '1',
     creator_id: 'admin',
     featured: false,
+    provider_name: null,
+    provider_link: null,
   },
 ]
 
