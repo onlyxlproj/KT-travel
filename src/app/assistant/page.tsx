@@ -54,7 +54,7 @@ export default function AssistantPage() {
     try {
       let response: string
 
-      if (isDemoMode() || isDemo) {
+      if (isDemoMode()) {
         // Simulate API delay
         await new Promise((resolve) => setTimeout(resolve, 1000))
         response = getDemoGeminiResponse(content)
@@ -64,7 +64,10 @@ export default function AssistantPage() {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             message: content,
-            context: 'travel_assistant',
+            history: messages.map((m) => ({
+              role: m.role === 'user' ? 'user' : 'model',
+              parts: [{ text: m.content }],
+            })),
           }),
         })
 
@@ -247,7 +250,7 @@ export default function AssistantPage() {
             </button>
           </form>
 
-          {(isDemoMode() || isDemo) && (
+          {isDemoMode() && (
             <p className="text-center text-xs text-gray-500 mt-3">
               Demo mode active. Add your GEMINI_API_KEY in Vercel to enable full AI capabilities.
             </p>

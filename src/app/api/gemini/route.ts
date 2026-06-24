@@ -18,7 +18,7 @@ Keep responses concise but informative. Use bullet points and headers for readab
 
 export async function POST(request: NextRequest) {
   try {
-    const { message } = await request.json()
+    const { message, history = [] } = await request.json()
 
     if (!message) {
       return NextResponse.json(
@@ -41,7 +41,9 @@ export async function POST(request: NextRequest) {
       systemInstruction: TRAVEL_SYSTEM_PROMPT,
     })
 
-    const result = await model.generateContent(message)
+    // Start a chat session with prior conversation history
+    const chat = model.startChat({ history })
+    const result = await chat.sendMessage(message)
     const text = result.response.text()
 
     return NextResponse.json({ response: text })
