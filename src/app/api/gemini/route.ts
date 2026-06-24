@@ -1,8 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server'
-import Anthropic from '@anthropic-ai/sdk'
-import { getDemoClaudeResponse } from '@/lib/demo-data'
+import { GoogleGenerativeAI } from '@google/generative-ai'
+import { getDemoGeminiResponse } from '@/lib/demo-data'
 
-const TRAVEL_SYSTEM_PROMPT = `You are Claude, an AI travel assistant for Kanakoo Travels. You help users plan trips, find destinations, and get personalized travel recommendations.
+const TRAVEL_SYSTEM_PROMPT = `You are an AI travel assistant for Kanakoo Travels. You help users plan trips, find destinations, and get personalized travel recommendations.
 
 Your expertise includes:
 - Destination recommendations based on interests, budget, and travel style
@@ -18,7 +18,7 @@ Keep responses concise but informative. Use bullet points and headers for readab
 
 export async function POST(request: NextRequest) {
   try {
-    const { message, context } = await request.json()
+    const { message } = await request.json()
 
     if (!message) {
       return NextResponse.json(
@@ -27,39 +27,29 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const apiKey = process.env.ANTHROPIC_API_KEY
+    const apiKey = process.env.GEMINI_API_KEY
 
     // If no API key, return demo response
     if (!apiKey || apiKey === '') {
-      const demoResponse = getDemoClaudeResponse(message)
+      const demoResponse = getDemoGeminiResponse(message)
       return NextResponse.json({ response: demoResponse })
     }
 
-    const anthropic = new Anthropic({
-      apiKey,
+    const genAI = new GoogleGenerativeAI(apiKey)
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-1.5-flash',
+      systemInstruction: TRAVEL_SYSTEM_PROMPT,
     })
 
-    const response = await anthropic.messages.create({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1024,
-      system: TRAVEL_SYSTEM_PROMPT,
-      messages: [
-        {
-          role: 'user',
-          content: message,
-        },
-      ],
-    })
-
-    const textContent = response.content.find((block) => block.type === 'text')
-    const text = textContent && textContent.type === 'text' ? textContent.text : 'I apologize, but I could not generate a response.'
+    const result = await model.generateContent(message)
+    const text = result.response.text()
 
     return NextResponse.json({ response: text })
   } catch (error) {
-    console.error('Claude API error:', error)
+    console.error('Gemini API error:', error)
 
     // Return demo response on error
-    const demoResponse = getDemoClaudeResponse('error')
+    const demoResponse = getDemoGeminiResponse('error')
     return NextResponse.json({ response: demoResponse })
   }
 }

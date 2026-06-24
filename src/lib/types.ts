@@ -32,6 +32,8 @@ export interface Tour {
   tour_type?: TourType
   creator_id: string
   featured: boolean
+  provider_name: string | null
+  provider_link: string | null
 }
 
 export interface Booking {

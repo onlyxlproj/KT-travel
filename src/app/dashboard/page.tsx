@@ -165,7 +165,7 @@ function DashboardContent() {
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-gray-900">
-                    ${bookings.reduce((sum, b) => sum + b.total_price, 0).toLocaleString()}
+                    ₹{bookings.reduce((sum, b) => sum + b.total_price, 0).toLocaleString('en-IN')}
                   </p>
                   <p className="text-gray-500 text-sm">Total Spent</p>
                 </div>
@@ -258,7 +258,7 @@ function DashboardContent() {
                           Booked on {new Date(booking.created_at).toLocaleDateString()}
                         </span>
                         <span className="text-lg font-bold text-gray-900">
-                          ${booking.total_price.toLocaleString()}
+                          ₹{booking.total_price.toLocaleString('en-IN')}
                         </span>
                       </div>
                     </div>
@@ -294,7 +294,7 @@ function DashboardContent() {
                       </h3>
                       <p className="text-gray-500 text-sm">{tour.country}</p>
                       <p className="text-lg font-bold text-primary-600 mt-2">
-                        ${tour.price.toLocaleString()}
+                        ₹{tour.price.toLocaleString('en-IN')}
                       </p>
                     </div>
                   </Link>

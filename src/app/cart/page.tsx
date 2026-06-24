@@ -235,10 +235,10 @@ export default function CartPage() {
 
                       <div className="mt-3 flex justify-between items-center">
                         <span className="text-gray-500 text-sm">
-                          ${item.tour?.price.toLocaleString()} x {item.travelers}
+                          ₹{item.tour?.price.toLocaleString('en-IN')} x {item.travelers}
                         </span>
                         <span className="text-lg font-bold text-gray-900">
-                          ${((item.tour?.price || 0) * item.travelers).toLocaleString()}
+                          ₹{((item.tour?.price || 0) * item.travelers).toLocaleString('en-IN')}
                         </span>
                       </div>
                     </div>
@@ -254,16 +254,16 @@ export default function CartPage() {
                   <div className="space-y-3 mb-6">
                     <div className="flex justify-between text-gray-600">
                       <span>Subtotal</span>
-                      <span>${subtotal.toLocaleString()}</span>
+                      <span>₹{subtotal.toLocaleString('en-IN')}</span>
                     </div>
                     <div className="flex justify-between text-gray-600">
                       <span>Taxes & Fees (10%)</span>
-                      <span>${tax.toLocaleString()}</span>
+                      <span>₹{tax.toLocaleString('en-IN')}</span>
                     </div>
                     <div className="border-t pt-3">
                       <div className="flex justify-between font-bold text-lg text-gray-900">
                         <span>Total</span>
-                        <span>${total.toLocaleString()}</span>
+                        <span>₹{total.toLocaleString('en-IN')}</span>
                       </div>
                     </div>
                   </div>

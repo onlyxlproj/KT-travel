@@ -271,7 +271,7 @@ export const demoBookings: Booking[] = [
   },
 ]
 
-export const getDemoClaudeResponse = (message: string): string => {
+export const getDemoGeminiResponse = (message: string): string => {
   const lowerMessage = message.toLowerCase()
 
   if (lowerMessage.includes('recommend') || lowerMessage.includes('suggest') || lowerMessage.includes('where')) {
@@ -285,7 +285,7 @@ Based on popular trends, here are my top suggestions:
 
 Would you like more details about any of these destinations?
 
-*This is a demo response. Connect your Anthropic API key for personalized AI recommendations.*`
+*This is a demo response. Connect your Gemini API key for personalized AI recommendations.*`
   }
 
   if (lowerMessage.includes('budget') || lowerMessage.includes('cheap') || lowerMessage.includes('afford')) {
@@ -300,7 +300,7 @@ Here are ways to save on your next trip:
 
 Our Bali, Vietnam, and Thailand tours offer the best value right now!
 
-*This is a demo response. Connect your Anthropic API key for personalized advice.*`
+*This is a demo response. Connect your Gemini API key for personalized advice.*`
   }
 
   if (lowerMessage.includes('family') || lowerMessage.includes('kids') || lowerMessage.includes('children')) {
@@ -314,7 +314,7 @@ Great options for traveling with family:
 
 I recommend our Bali Budget Explorer tour - it is perfect for families!
 
-*This is a demo response. Connect your Anthropic API key for personalized recommendations.*`
+*This is a demo response. Connect your Gemini API key for personalized recommendations.*`
   }
 
   return `Hello! I'm your AI travel assistant. I can help you with:
@@ -326,5 +326,5 @@ I recommend our Bali Budget Explorer tour - it is perfect for families!
 
 Try asking me "Where should I travel for adventure?" or "Suggest a budget-friendly beach destination!"
 
-*Currently in demo mode. Add your ANTHROPIC_API_KEY in Vercel to enable full AI capabilities.*`
+*Currently in demo mode. Add your GEMINI_API_KEY in Vercel to enable full AI capabilities.*`
 }

@@ -1,7 +1,7 @@
 {
-  "name": "claude-travel-hub",
+  "name": "kanakoo-travels",
   "version": "1.0.0",
-  "description": "A travel marketplace with tour booking, search, and Claude AI travel recommendations",
+  "description": "A travel marketplace with tour booking, search, and Gemini AI travel recommendations",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -10,7 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.52.0",
+    "@google/generative-ai": "^0.21.0",
     "@supabase/supabase-js": "^2.49.1",
     "lucide-react": "^0.469.0",
     "next": "^15.1.4",

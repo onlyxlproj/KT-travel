@@ -5,7 +5,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import DemoBanner from '@/components/DemoBanner'
 import { useAuth } from '@/lib/auth-context'
-import { isDemoMode, getDemoClaudeResponse } from '@/lib/demo-data'
+import { isDemoMode, getDemoGeminiResponse } from '@/lib/demo-data'
 import { Send, Loader2, Bot, User, Sparkles } from 'lucide-react'
 
 interface Message {
@@ -57,9 +57,9 @@ export default function AssistantPage() {
       if (isDemoMode() || isDemo) {
         // Simulate API delay
         await new Promise((resolve) => setTimeout(resolve, 1000))
-        response = getDemoClaudeResponse(content)
+        response = getDemoGeminiResponse(content)
       } else {
-        const res = await fetch('/api/claude', {
+        const res = await fetch('/api/gemini', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
@@ -114,7 +114,7 @@ export default function AssistantPage() {
             <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
               <Bot className="h-8 w-8 text-white" />
             </div>
-            <h1 className="text-2xl font-bold text-gray-900">Claude Travel Assistant</h1>
+            <h1 className="text-2xl font-bold text-gray-900">Gemini Travel Assistant</h1>
             <p className="text-gray-600 mt-1">
               Ask me anything about travel destinations, planning, and recommendations!
             </p>
@@ -249,7 +249,7 @@ export default function AssistantPage() {
 
           {(isDemoMode() || isDemo) && (
             <p className="text-center text-xs text-gray-500 mt-3">
-              Demo mode active. Add your ANTHROPIC_API_KEY in Vercel to enable full AI capabilities.
+              Demo mode active. Add your GEMINI_API_KEY in Vercel to enable full AI capabilities.
             </p>
           )}
         </div>

@@ -39,7 +39,9 @@ CREATE TABLE IF NOT EXISTS tours (
   rating DECIMAL(2, 1) DEFAULT 0,
   tour_type_id UUID REFERENCES tour_types(id),
   creator_id TEXT NOT NULL,
-  featured BOOLEAN DEFAULT FALSE
+  featured BOOLEAN DEFAULT FALSE,
+  provider_name TEXT,
+  provider_link TEXT
 );
 
 -- Bookings table
@@ -212,3 +214,8 @@ INSERT INTO news (title, content, excerpt, image_url, author_id, published) VALU
   ('Top 10 Destinations for 2024', 'Discover the most exciting travel destinations for 2024.', 'Discover the most exciting travel destinations for 2024.', 'https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800', 'admin', true),
   ('Travel Tips: How to Pack Light', 'Master the art of minimalist travel with our expert packing tips.', 'Master the art of minimalist travel with our expert packing tips.', 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=800', 'admin', true)
 ON CONFLICT DO NOTHING;
+
+-- Migration: Add provider details to tours table
+-- Run this if the tours table already exists in your Supabase project
+ALTER TABLE tours ADD COLUMN IF NOT EXISTS provider_name TEXT;
+ALTER TABLE tours ADD COLUMN IF NOT EXISTS provider_link TEXT;

@@ -312,7 +312,7 @@ export default function TourDetailPage() {
                     Talk to our AI travel assistant for personalized recommendations.
                   </p>
                   <Link href="/assistant" className="btn-accent w-full py-2 flex items-center justify-center">
-                    Ask Claude AI
+                    Ask Gemini AI
                   </Link>
                 </div>
               </div>

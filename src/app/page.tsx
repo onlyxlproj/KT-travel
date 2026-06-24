@@ -76,7 +76,7 @@ export default function HomePage() {
                 className="inline-flex items-center space-x-2 btn-accent animate-slideUp"
               >
                 <MessageSquare className="h-5 w-5" />
-                <span>Ask Claude for Recommendations</span>
+                <span>Ask Gemini for Recommendations</span>
               </Link>
             </div>
 
@@ -150,7 +150,7 @@ export default function HomePage() {
         <section className="py-16 bg-primary-600">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-white text-center mb-10">
-              Why Choose Claude Travel Hub
+              Why Choose Kanakoo Travels
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
@@ -159,7 +159,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-2">AI-Powered Recommendations</h3>
                 <p className="text-primary-100">
-                  Get personalized tour suggestions based on your preferences with our Claude AI assistant.
+                  Get personalized tour suggestions based on your preferences with our Gemini AI assistant.
                 </p>
               </div>
               <div className="text-center">
@@ -230,14 +230,14 @@ export default function HomePage() {
               Ready to Start Your Journey?
             </h2>
             <p className="text-xl text-gray-600 mb-8">
-              Join thousands of happy travelers who found their perfect trip with Claude Travel Hub.
+              Join thousands of happy travelers who found their perfect trip with Kanakoo Travels.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link href="/tours" className="btn-primary py-3 px-8">
                 Browse Tours
               </Link>
               <Link href="/assistant" className="btn-outline py-3 px-8">
-                Talk to Claude AI
+                Talk to Gemini AI
               </Link>
             </div>
           </div>
